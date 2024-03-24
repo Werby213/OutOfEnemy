@@ -1,0 +1,150 @@
+<!-- about.html -->
+{% extends 'skynet/index.html' %}
+
+{% block title %}About - {{ block.super }}{% endblock %}
+
+{% block content %}
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title><strong>About - LayDigital</strong></title>
+        <style>
+            body {
+                font-family: 'Segoe UI Semibold', sans-serif;
+                line-height: 1.6;
+            }
+            h1 {
+                font-weight: bold;
+                font-size: 44px;
+            }
+            h2 {
+                font-size: 20px;
+                margin-top: 20px;
+            }
+            p {
+                margin-bottom: 15px;
+            }
+            ol {
+                margin-bottom: 15px;
+                padding-left: 20px;
+            }
+            strong {
+                font-weight: bold;
+            }
+            blockquote {
+                margin: 20px 0;
+                padding-left: 20px;
+                border-left: 3px solid #333;
+            }
+            .container {
+                width: 100%;
+                margin: 0 auto;
+            }
+            .widget-container {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 30px;
+            }
+            .widget {
+                text-align: center;
+                width: 100%;
+            }
+            iframe {
+                border: none;
+            }
+
+            @media screen and (max-width: 768px) {
+                .widget-container {
+                    flex-direction: column;
+                }
+                .widget {
+                    width: 100%;
+                    margin-bottom: 20px;
+                }
+            }
+        </style>
+    </head>
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to LayDigital - A Community of Creators.</p>
+        <p>LayDigital is a passionate small studio that creates games and diverse content. We invite individuals who
+            seek to be part of something bigger. Led by a single individual presently, LayDigital eagerly welcomes
+            new members to join forces and foster a unified team.</p>
+
+        <h2>Introduction to LayDigital</h2>
+        <p>LayDigital stands as a beacon for creativity and innovation in the realm of game development and content
+            creation. Despite its humble beginnings with a single member, the studio holds boundless potential for
+            growth and success.</p>
+
+        <h2>Our Mission and Vision</h2>
+        <p>At LayDigital, our mission is to cultivate a collaborative environment where individuals can unleash their
+            creative prowess and contribute to impactful projects. Our vision is to become a leading force in the gaming
+            and content creation industry, known for our ingenuity and passion.</p>
+
+        <h2>Why Join LayDigital</h2>
+        <p><strong>Benefits of joining our team:</strong></p>
+        <ul>
+            <li>Access to a supportive community.</li>
+            <li>Opportunities for skill enhancement.</li>
+            <li>Exciting projects alongside like-minded individuals.</li>
+        </ul>
+
+        <h2>How to Join</h2>
+        <p><strong>Steps to become a member:</strong></p>
+        <ol>
+            <li>Just chat with me in discord.</li>
+
+        </ol>
+        <p><strong>Requirements:</strong> A passion for game development and content creation, and a commitment to our
+            values of collaboration, innovation, and professionalism.</p>
+
+        <h2>Future Plans</h2>
+        <p>Looking ahead, LayDigital is committed to pushing the boundaries of innovation and creating
+            immersive experiences that captivate audiences worldwide. With each new project, we strive to leave
+            a lasting impact on the gaming industry.</p>
+
+        <h2>Join Us Today</h2>
+        <p>Join LayDigital today and become part of a vibrant community dedicated to pushing the boundaries of
+            creativity and innovation. Whether you're an experienced developer or a novice creator,
+            there's a place for you in our growing team.</p>
+
+        <h2>FAQs</h2>
+        <p><strong>How do I apply to join LayDigital?</strong><br> Visit our discord and fill out the membership
+            application form.</p>
+        <p><strong>Are there any membership fees?</strong><br> No, membership at LayDigital is free of charge.</p>
+        <p><strong>What types of projects does LayDigital work on?</strong><br> LayDigital works on a variety of
+            projects, including games, interactive experiences, and multimedia content.</p>
+        <p><strong>Can I join LayDigital if I'm not a professional developer?</strong><br> Yes, LayDigital welcomes
+            creators of all skill levels and backgrounds.</p>
+        <p><strong>How can I stay updated on LayDigital's latest projects and announcements?</strong><br>
+            Follow us on social media and subscribe to our newsletter for regular updates.</p>
+    </div>
+
+    <div class="widget-container">
+        <div class="widget">
+            <h2>Our Discord</h2>
+            <iframe src="https://discord.com/widget?id=873489817093152768&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </div>
+        <div class="widget">
+            <h2>Our Youtube Channel</h2>
+            <div id="ytplayer"></div>
+        </div>
+    </div>
+
+    <script>
+        // Load the IFrame Player API code asynchronously.
+        var tag = document.createElement('script');
+        tag.src = "https://www.youtube.com/player_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        var player;
+        function onYouTubePlayerAPIReady() {
+            player = new YT.Player('ytplayer', {
+                height: '360',
+                width: '640',
+                videoId: 'https://www.youtube.com/channel/UC_6tq9ctVJDDl0ChHUXT6nQ'
+            });
+        }
+    </script>
+{% endblock %}
